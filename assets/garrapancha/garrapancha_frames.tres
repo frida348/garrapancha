@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://oqjgsw04hcin"]
+
+[ext_resource type="Texture2D" uid="uid://cr588alvg87y8" path="res://assets/garrapancha/Garrapancha-animation.png" id="1_1bmr3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bmr3"]
+atlas = ExtResource("1_1bmr3")
+region = Rect2(393, 0, 393, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p6j1"]
+atlas = ExtResource("1_1bmr3")
+region = Rect2(786, 0, 393, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijjit"]
+atlas = ExtResource("1_1bmr3")
+region = Rect2(393, 0, 393, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_try0o"]
+atlas = ExtResource("1_1bmr3")
+region = Rect2(0, 0, 393, 304)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bmr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p6j1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijjit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_try0o")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]

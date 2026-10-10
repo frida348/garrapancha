@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dyyqkee3mff48"
+path="res://.godot/imported/garrapancha.dialogue-60727c00ee3c72c31aa42aa90f05bda4.tres"
+
+[deps]
+
+source_file="res://dialogue/garrapancha.dialogue"
+dest_files=["res://.godot/imported/garrapancha.dialogue-60727c00ee3c72c31aa42aa90f05bda4.tres"]
+
+[params]
+
+defaults=true

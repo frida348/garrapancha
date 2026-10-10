@@ -1,0 +1,16 @@
+~ start
+¿Vas a rascar tu tuuch?
+
+- Sí, mientras aprendo
+	Miis: ¡Qué bueno que quieras aprender! ¿Sabías que las garrapatas viven muy cerca de nosotros, incluso dentro de casa?
+	Miis: A las garrapatas les encanta esconderse en las grietas de las paredes de piedra o madera y en los techos de paja
+	Miis: Si acumulamos mucha basura, leña o ropa vieja, les estamos dando un hotel de lujo para esconderse.
+	Miis: Nuestros perritos son sus mejores amigos. Debemos revisarlos siempre después de que salgan a jugar.
+	Miis: Mantener el patio limpio, sin hierba alta y lavarnos bien las manos después de jugar con mascotas ayuda a mantenerlas lejos.
+	Miis: ¡Muy bien! Ya aprendiste un poco más.
+
+
+- No, quiero jugar
+	do activar_juego()
+	Miis: ¡Vamos a jugar! Busca en la casa y el patio los factores de riesgo.
+=> END

@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxo4dticnqj31"]
+
+[ext_resource type="Texture2D" uid="uid://br7b3wwl26rx1" path="res://assets/laboratorio/Cientifico-animation.png" id="1_3bt1o"]
+[ext_resource type="Script" uid="uid://blupog1j8xdqq" path="res://assets/laboratorio/cientificoCharacterScript.gd" id="1_6gx0y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr77i"]
+atlas = ExtResource("1_3bt1o")
+region = Rect2(0, 0, 393, 563)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dojvi"]
+atlas = ExtResource("1_3bt1o")
+region = Rect2(393, 0, 393, 563)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gx0y"]
+atlas = ExtResource("1_3bt1o")
+region = Rect2(786, 0, 393, 563)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntnqu"]
+atlas = ExtResource("1_3bt1o")
+region = Rect2(1179, 0, 393, 563)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mr77i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr77i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dojvi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gx0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntnqu")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dojvi"]
+radius = 135.983
+height = 318.103
+
+[node name="cientifico" type="Node2D"]
+script = ExtResource("1_6gx0y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(358, 1218)
+scale = Vector2(1.64726, 1.64726)
+sprite_frames = SubResource("SpriteFrames_mr77i")
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(358, 1218)
+scale = Vector2(1.64726, 1.64726)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.6424, -27.9251)
+scale = Vector2(0.999999, 1)
+shape = SubResource("CapsuleShape2D_dojvi")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

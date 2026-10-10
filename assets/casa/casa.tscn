@@ -1,0 +1,114 @@
+[gd_scene load_steps=16 format=3 uid="uid://n5iiasju74ur"]
+
+[ext_resource type="Script" uid="uid://hjxw3qdj702a" path="res://assets/casa/casa.gd" id="1_ahg08"]
+[ext_resource type="Texture2D" uid="uid://cylreqfv0fu7i" path="res://assets/casa/casa-0000.png" id="1_qgjjr"]
+[ext_resource type="PackedScene" uid="uid://bikg0e8nnj214" path="res://assets/casa/hamaca.tscn" id="2_m4wry"]
+[ext_resource type="PackedScene" uid="uid://cylxi22kddvnr" path="res://ui/lab_button.tscn" id="3_xnwli"]
+[ext_resource type="PackedScene" uid="uid://bs3wmy1iffq1g" path="res://ui/monte_button.tscn" id="4_yiwyu"]
+[ext_resource type="PackedScene" uid="uid://c2aai0jrr72i6" path="res://malix.tscn" id="5_yiwyu"]
+[ext_resource type="Texture2D" uid="uid://u76ry4rk4lpt" path="res://assets/casa/Miis.png" id="6_8pu4j"]
+[ext_resource type="Texture2D" uid="uid://t342toymcsi0" path="res://assets/casa/Miss1.png" id="7_nwjow"]
+[ext_resource type="Texture2D" uid="uid://cu4qa1757atur" path="res://assets/casa/Malix.png" id="8_s3lfu"]
+[ext_resource type="Texture2D" uid="uid://d1limfl6h4uem" path="res://assets/casa/Miss2.png" id="8_xfb50"]
+[ext_resource type="Texture2D" uid="uid://b0d2m0q21ddm0" path="res://assets/casa/Malix1.png" id="9_dts6c"]
+[ext_resource type="Texture2D" uid="uid://b4wma0mvwi61m" path="res://assets/casa/Malix2.png" id="11_ahg08"]
+
+[sub_resource type="Animation" id="Animation_xfb50"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer2/monte-button/Miis:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_8pu4j")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer2/monte-button/Malix/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_s3lfu")]
+}
+
+[sub_resource type="Animation" id="Animation_8asbp"]
+resource_name = "idle_personajes"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer2/monte-button/Miis:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_8pu4j"), ExtResource("7_nwjow"), ExtResource("8_xfb50"), ExtResource("6_8pu4j")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer2/monte-button/Malix/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_s3lfu"), ExtResource("9_dts6c"), ExtResource("11_ahg08"), ExtResource("8_s3lfu")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dts6c"]
+_data = {
+&"RESET": SubResource("Animation_xfb50"),
+&"idle_personajes": SubResource("Animation_8asbp")
+}
+
+[node name="casa" type="Node2D"]
+script = ExtResource("1_ahg08")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Casa-0000" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(360, 815)
+scale = Vector2(1.93257, 1.93257)
+texture = ExtResource("1_qgjjr")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="hamaca" parent="CanvasLayer2" instance=ExtResource("2_m4wry")]
+position = Vector2(-11, 91)
+
+[node name="lab_button" parent="CanvasLayer2" instance=ExtResource("3_xnwli")]
+position = Vector2(0, 1448)
+
+[node name="monte-button" parent="CanvasLayer2" instance=ExtResource("4_yiwyu")]
+position = Vector2(570, 1448)
+
+[node name="Malix" parent="CanvasLayer2/monte-button" instance=ExtResource("5_yiwyu")]
+position = Vector2(-326, 3)
+scale = Vector2(1.88028, 1.86956)
+
+[node name="Miis" type="Sprite2D" parent="CanvasLayer2/monte-button"]
+position = Vector2(-68, 82)
+scale = Vector2(1.79807, 1.79807)
+texture = ExtResource("6_8pu4j")
+
+[node name="MiniJuegoCasa" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dts6c")
+}
+
+[editable path="CanvasLayer2/monte-button/Malix"]

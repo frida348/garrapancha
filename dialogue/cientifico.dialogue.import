@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://u6psf5dqk3rx"
+path="res://.godot/imported/cientifico.dialogue-490b0d9799623ea48de38af6be42d436.tres"
+
+[deps]
+
+source_file="res://dialogue/cientifico.dialogue"
+dest_files=["res://.godot/imported/cientifico.dialogue-490b0d9799623ea48de38af6be42d436.tres"]
+
+[params]
+
+defaults=true

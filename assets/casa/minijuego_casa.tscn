@@ -1,0 +1,538 @@
+[gd_scene load_steps=38 format=3 uid="uid://cwllit42x35uv"]
+
+[ext_resource type="Texture2D" uid="uid://x36km7updh85" path="res://assets/casa/objetos/fondocasamonte.png" id="1_3rfhi"]
+[ext_resource type="Script" uid="uid://d2mijkge7487a" path="res://assets/casa/objeto_interactivo.gd" id="2_xla8r"]
+[ext_resource type="Texture2D" uid="uid://byq3o04dpwyyh" path="res://assets/casa/objetos/perrito.png" id="3_vn30b"]
+[ext_resource type="Texture2D" uid="uid://d1w5mlm3bxm3w" path="res://assets/casa/objetos/perrito2.png" id="3_vn30c"]
+[ext_resource type="Texture2D" uid="uid://dgdftgio1jkq7" path="res://assets/casa/objetos/perrito3.png" id="3_vn30d"]
+[ext_resource type="Texture2D" uid="uid://3dxbsey7yc12" path="res://assets/casa/objetos/basura.png" id="4_yra6w"]
+[ext_resource type="Texture2D" uid="uid://b5xue4csdt4hx" path="res://assets/casa/objetos/lena.png" id="5_jmwjb"]
+[ext_resource type="Texture2D" uid="uid://b47cr7nbkj1hp" path="res://assets/casa/objetos/maleza.png" id="6_vhwkw"]
+[ext_resource type="Texture2D" uid="uid://buivlul0u07dd" path="res://assets/casa/objetos/cama_perro.png" id="7_aqoa5"]
+[ext_resource type="Texture2D" uid="uid://ursahw5fu4g1" path="res://assets/casa/objetos/grieta.png" id="8_3rfhi"]
+[ext_resource type="Texture2D" uid="uid://brjtarfd0tfm2" path="res://assets/casa/objetos/gatito.png" id="9_b2p56"]
+[ext_resource type="Texture2D" uid="uid://m6166tf06l5b" path="res://assets/casa/objetos/gatito2.png" id="9_b2p57"]
+[ext_resource type="Texture2D" uid="uid://dgy12g7v7mb3y" path="res://assets/casa/objetos/gatito3.png" id="9_b2p58"]
+[ext_resource type="Texture2D" uid="uid://c5hkjagjvlcex" path="res://assets/casa/objetos/zarigueya.png" id="10_5v8yy"]
+[ext_resource type="Texture2D" uid="uid://x7doishdqij4" path="res://assets/casa/objetos/zarigueya2.png" id="11_agp56"]
+[ext_resource type="Texture2D" uid="uid://br3cjvg4nrx5j" path="res://assets/casa/objetos/arena_gato.png" id="12_fvig3"]
+[ext_resource type="Script" uid="uid://bnlvrwdjf5q51" path="res://assets/casa/minijuego_casa.gd" id="13_mj7v3"]
+[ext_resource type="Theme" uid="uid://b2eaopoh12mld" path="res://assets/casa/casa_balloon_theme.tres" id="14_gavf8"]
+[ext_resource type="AudioStream" uid="uid://d1n1a573s1id2" path="res://music/sonido_click.wav" id="15_1i4kq"]
+[ext_resource type="AudioStream" uid="uid://dit78okevfcbj" path="res://music/sonido_error.wav" id="16_e3s2a"]
+[ext_resource type="AudioStream" uid="uid://cqxlkfh6wrtj7" path="res://music/sonido_teclado.wav" id="17_7yn6j"]
+[ext_resource type="Texture2D" uid="uid://chhcrb2lswnwq" path="res://assets/casa/objetos/jorgito1.png" id="19_f6xgp"]
+[ext_resource type="Texture2D" uid="uid://7ubqanw8dtn7" path="res://assets/casa/objetos/jorgito2.png" id="20_bt076"]
+[ext_resource type="Texture2D" uid="uid://bnho6isn1ewne" path="res://assets/casa/objetos/jorgito3.png" id="21_kbj5l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_perro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vn30b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vn30c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vn30d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtame"]
+radius = 32.0
+height = 72.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn30b"]
+size = Vector2(111, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2p56"]
+size = Vector2(100.25, 77.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v8yy"]
+size = Vector2(214.469, 111.039)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agp56"]
+size = Vector2(98, 54.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvig3"]
+size = Vector2(33, 57.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gato"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_b2p56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b2p57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b2p58")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y0b3q"]
+radius = 25.0
+height = 50.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aq0b4"]
+radius = 24.0
+height = 48.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3non"]
+size = Vector2(58, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukyf8"]
+size = Vector2(86, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hq8yv"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_f6xgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bt076")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kbj5l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="MinijuegoCasa" type="Node2D"]
+script = ExtResource("13_mj7v3")
+
+[node name="Escenario" type="Node2D" parent="."]
+
+[node name="Fondo" type="Sprite2D" parent="Escenario"]
+texture = ExtResource("1_3rfhi")
+centered = false
+
+[node name="ObjetosInteractivos" type="Node2D" parent="Escenario"]
+
+[node name="PerroRascandose" type="Area2D" parent="Escenario/ObjetosInteractivos"]
+script = ExtResource("2_xla8r")
+es_correcto = true
+nombre_objeto = "Perro rascandose"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Escenario/ObjetosInteractivos/PerroRascandose"]
+position = Vector2(401, 309)
+scale = Vector2(0.476563, 0.469727)
+sprite_frames = SubResource("SpriteFrames_perro")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/ObjetosInteractivos/PerroRascandose"]
+position = Vector2(399, 317)
+shape = SubResource("CapsuleShape2D_wtame")
+
+[node name="Basura" type="Area2D" parent="Escenario/ObjetosInteractivos"]
+script = ExtResource("2_xla8r")
+es_correcto = true
+nombre_objeto = "Basura"
+
+[node name="Sprite2D" type="Sprite2D" parent="Escenario/ObjetosInteractivos/Basura"]
+position = Vector2(763.867, 213.902)
+scale = Vector2(0.36808, 0.408781)
+texture = ExtResource("4_yra6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/ObjetosInteractivos/Basura"]
+position = Vector2(780, 222)
+shape = SubResource("RectangleShape2D_vn30b")
+
+[node name="Lena" type="Area2D" parent="Escenario/ObjetosInteractivos"]
+script = ExtResource("2_xla8r")
+es_correcto = true
+nombre_objeto = "Lena acumulada"
+
+[node name="Sprite2D" type="Sprite2D" parent="Escenario/ObjetosInteractivos/Lena"]
+position = Vector2(423, 169)
+scale = Vector2(0.260999, 0.254065)
+texture = ExtResource("5_jmwjb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/ObjetosInteractivos/Lena"]
+position = Vector2(422, 177)
+shape = SubResource("RectangleShape2D_b2p56")
+
+[node name="Maleza" type="Area2D" parent="Escenario/ObjetosInteractivos"]
+script = ExtResource("2_xla8r")
+es_correcto = true
+nombre_objeto = "Maleza"
+
+[node name="Sprite2D" type="Sprite2D" parent="Escenario/ObjetosInteractivos/Maleza"]
+position = Vector2(137.844, 255)
+scale = Vector2(0.269836, 0.273438)
+texture = ExtResource("6_vhwkw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/ObjetosInteractivos/Maleza"]
+position = Vector2(106.766, 271.52)
+shape = SubResource("RectangleShape2D_5v8yy")
+
+[node name="CamaPerro" type="Area2D" parent="Escenario/ObjetosInteractivos"]
+script = ExtResource("2_xla8r")
+es_correcto = true
+nombre_objeto = "Cama del perro"
+
+[node name="Sprite2D" type="Sprite2D" parent="Escenario/ObjetosInteractivos/CamaPerro"]
+position = Vector2(583, 261)
+scale = Vector2(0.505922, 0.496087)
+texture = ExtResource("7_aqoa5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/ObjetosInteractivos/CamaPerro"]
+position = Vector2(584, 259)
+shape = SubResource("RectangleShape2D_agp56")
+
+[node name="Grieta" type="Area2D" parent="Escenario/ObjetosInteractivos"]
+script = ExtResource("2_xla8r")
+es_correcto = true
+nombre_objeto = "Grieta en la pared"
+
+[node name="Sprite2D" type="Sprite2D" parent="Escenario/ObjetosInteractivos/Grieta"]
+position = Vector2(136.081, 120.624)
+scale = Vector2(0.233313, 0.149679)
+texture = ExtResource("8_3rfhi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/ObjetosInteractivos/Grieta"]
+position = Vector2(140.662, 120.874)
+shape = SubResource("RectangleShape2D_fvig3")
+
+[node name="Gato" type="Area2D" parent="Escenario/ObjetosInteractivos"]
+script = ExtResource("2_xla8r")
+es_correcto = true
+nombre_objeto = "Gato"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Escenario/ObjetosInteractivos/Gato"]
+position = Vector2(310.75, 188.5)
+scale = Vector2(0.676471, 0.73)
+sprite_frames = SubResource("SpriteFrames_gato")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/ObjetosInteractivos/Gato"]
+position = Vector2(308.75, 193.5)
+shape = SubResource("CapsuleShape2D_y0b3q")
+
+[node name="Zarigueya1" type="Area2D" parent="Escenario/ObjetosInteractivos"]
+script = ExtResource("2_xla8r")
+es_correcto = true
+nombre_objeto = "Zarigueya en muro"
+
+[node name="Sprite2D" type="Sprite2D" parent="Escenario/ObjetosInteractivos/Zarigueya1"]
+position = Vector2(794, 75)
+scale = Vector2(0.754386, 0.660714)
+texture = ExtResource("10_5v8yy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/ObjetosInteractivos/Zarigueya1"]
+position = Vector2(804, 73)
+shape = SubResource("CapsuleShape2D_aq0b4")
+
+[node name="Zarigueya2" type="Area2D" parent="Escenario/ObjetosInteractivos"]
+script = ExtResource("2_xla8r")
+es_correcto = true
+nombre_objeto = "Zarigueya cerca del patio"
+
+[node name="Sprite2D" type="Sprite2D" parent="Escenario/ObjetosInteractivos/Zarigueya2"]
+position = Vector2(669, 323)
+scale = Vector2(0.789256, 0.8)
+texture = ExtResource("11_agp56")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/ObjetosInteractivos/Zarigueya2"]
+position = Vector2(662, 322)
+shape = SubResource("RectangleShape2D_c3non")
+
+[node name="Arenero" type="Area2D" parent="Escenario/ObjetosInteractivos"]
+script = ExtResource("2_xla8r")
+es_correcto = true
+nombre_objeto = "Arenero"
+
+[node name="Sprite2D" type="Sprite2D" parent="Escenario/ObjetosInteractivos/Arenero"]
+position = Vector2(563, 171)
+scale = Vector2(0.537634, 0.554794)
+texture = ExtResource("12_fvig3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/ObjetosInteractivos/Arenero"]
+position = Vector2(565, 183)
+shape = SubResource("RectangleShape2D_ukyf8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("14_gavf8")
+
+[node name="CounterPanel" type="PanelContainer" parent="CanvasLayer/HUD"]
+layout_mode = 1
+offset_left = 21.0
+offset_top = 618.0
+offset_right = 349.0
+offset_bottom = 707.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HUD/CounterPanel"]
+layout_mode = 2
+
+[node name="CounterLabel" type="Label" parent="CanvasLayer/HUD/CounterPanel/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "0/10 encontrados"
+vertical_alignment = 1
+
+[node name="TimePanel" type="PanelContainer" parent="CanvasLayer/HUD"]
+layout_mode = 1
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 228.0
+offset_bottom = 139.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HUD/TimePanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HUD/TimePanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/HUD/TimePanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Tiempo"
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer/HUD/TimePanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "02:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NotificationPanel" type="PanelContainer" parent="CanvasLayer/HUD"]
+layout_mode = 1
+offset_left = 500.0
+offset_top = 20.0
+offset_right = 1100.0
+offset_bottom = 92.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HUD/NotificationPanel"]
+layout_mode = 2
+
+[node name="NotificationLabel" type="Label" parent="CanvasLayer/HUD/NotificationPanel/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+
+[node name="TopButtons" type="HBoxContainer" parent="CanvasLayer/HUD"]
+layout_mode = 1
+offset_left = 1243.0
+offset_top = 629.0
+offset_right = 1545.0
+offset_bottom = 707.0
+theme_override_constants/separation = 12
+alignment = 2
+
+[node name="VolverCasaButton" type="Button" parent="CanvasLayer/HUD/TopButtons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Volver a casa"
+
+[node name="LeaveConfirmOverlay" type="ColorRect" parent="CanvasLayer/HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.45)
+
+[node name="LeaveConfirmPanel" type="PanelContainer" parent="CanvasLayer/HUD/LeaveConfirmOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -120.0
+offset_right = 300.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HUD/LeaveConfirmOverlay/LeaveConfirmPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HUD/LeaveConfirmOverlay/LeaveConfirmPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="LeaveConfirmLabel" type="Label" parent="CanvasLayer/HUD/LeaveConfirmOverlay/LeaveConfirmPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ButtonRow" type="HBoxContainer" parent="CanvasLayer/HUD/LeaveConfirmOverlay/LeaveConfirmPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="ConfirmLeaveButton" type="Button" parent="CanvasLayer/HUD/LeaveConfirmOverlay/LeaveConfirmPanel/MarginContainer/VBoxContainer/ButtonRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Confirmar"
+
+[node name="CancelLeaveButton" type="Button" parent="CanvasLayer/HUD/LeaveConfirmOverlay/LeaveConfirmPanel/MarginContainer/VBoxContainer/ButtonRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Cancelar"
+
+[node name="IntroOverlay" type="ColorRect" parent="CanvasLayer/HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.45)
+
+[node name="IntroPanel" type="PanelContainer" parent="CanvasLayer/HUD/IntroOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -150.0
+offset_right = 340.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HUD/IntroOverlay/IntroPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HUD/IntroOverlay/IntroPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SpeakerLabel" type="Label" parent="CanvasLayer/HUD/IntroOverlay/IntroPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Jorgito:"
+horizontal_alignment = 1
+
+[node name="IntroLabel" type="Label" parent="CanvasLayer/HUD/IntroOverlay/IntroPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "¡Alerta de garrapatas! Busca en la casa y haz clic en los 10 factores de riesgo ocultos"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="IntroButtonRow" type="HBoxContainer" parent="CanvasLayer/HUD/IntroOverlay/IntroPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="StartGameButton" type="Button" parent="CanvasLayer/HUD/IntroOverlay/IntroPanel/MarginContainer/VBoxContainer/IntroButtonRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Comenzar"
+
+[node name="Jorgito" type="AnimatedSprite2D" parent="CanvasLayer/HUD/IntroOverlay"]
+position = Vector2(345, 395)
+scale = Vector2(0.570313, 0.540039)
+sprite_frames = SubResource("SpriteFrames_hq8yv")
+animation = &"idle"
+
+[node name="FinalOverlay" type="ColorRect" parent="CanvasLayer/HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.45)
+
+[node name="FinalPanel" type="PanelContainer" parent="CanvasLayer/HUD/FinalOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -160.0
+offset_right = 340.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HUD/FinalOverlay/FinalPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HUD/FinalOverlay/FinalPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TituloFinalLabel" type="Label" parent="CanvasLayer/HUD/FinalOverlay/FinalPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Excelente!"
+horizontal_alignment = 1
+
+[node name="ResumenFinalLabel" type="Label" parent="CanvasLayer/HUD/FinalOverlay/FinalPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Completaste el recorrido e identificaste todos los factores de riesgo."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ButtonRow" type="HBoxContainer" parent="CanvasLayer/HUD/FinalOverlay/FinalPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="RestartFinalButton" type="Button" parent="CanvasLayer/HUD/FinalOverlay/FinalPanel/MarginContainer/VBoxContainer/ButtonRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Reintentar"
+
+[node name="VolverCasaFinalButton" type="Button" parent="CanvasLayer/HUD/FinalOverlay/FinalPanel/MarginContainer/VBoxContainer/ButtonRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Volver a casa"
+
+[node name="AudioClickCorrecto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_1i4kq")
+
+[node name="AudioClickIncorrecto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_e3s2a")
+
+[node name="AudioIntroTyping" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_7yn6j")

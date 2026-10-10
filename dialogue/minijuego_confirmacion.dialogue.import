@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://qbv80203ddcv"
+path="res://.godot/imported/minijuego_confirmacion.dialogue-a2f220fc37dce8ef365bcee4bae6c729.tres"
+
+[deps]
+
+source_file="res://dialogue/minijuego_confirmacion.dialogue"
+dest_files=["res://.godot/imported/minijuego_confirmacion.dialogue-a2f220fc37dce8ef365bcee4bae6c729.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnxtrb6o1pqph"]
+
+[ext_resource type="AudioStream" uid="uid://bqvoyopbww82u" path="res://music/musica_fondo.ogg" id="1_2uc1r"]
+[ext_resource type="Script" uid="uid://b88l8gwnkopx1" path="res://music/musica_global.gd" id="1_axt3n"]
+[ext_resource type="AudioStream" uid="uid://bv1kphgmiklgm" path="res://music/sonido_botones.wav" id="2_jy6eg"]
+[ext_resource type="AudioStream" uid="uid://bxw4ipueucc5b" path="res://music/sonido_cambioescena.wav" id="3_j2n8l"]
+
+[node name="MusicaGlobal" type="Node"]
+script = ExtResource("1_axt3n")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_2uc1r")
+autoplay = true
+
+[node name="AudioStreamPlayerBotones" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jy6eg")
+
+[node name="AudioStreamPlayerCambioEscena" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_j2n8l")

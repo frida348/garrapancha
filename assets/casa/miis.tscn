@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs0iw8xdqn7sl"]
+
+[ext_resource type="Texture2D" uid="uid://u76ry4rk4lpt" path="res://assets/casa/Miis.png" id="1_f01pu"]
+
+[node name="Miis" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_f01pu")
+
+[node name="Area2D" type="Area2D" parent="."]

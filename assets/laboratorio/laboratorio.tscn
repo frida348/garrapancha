@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://x5w4c01okrpl"]
+
+[ext_resource type="PackedScene" uid="uid://dxo4dticnqj31" path="res://assets/laboratorio/cientifico.tscn" id="1_ltmkg"]
+[ext_resource type="PackedScene" uid="uid://rk4v0d5m370u" path="res://ui/casa-button.tscn" id="2_v2b3o"]
+[ext_resource type="PackedScene" uid="uid://bs3wmy1iffq1g" path="res://ui/monte_button.tscn" id="3_cjbqw"]
+
+[node name="laboratorio" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [75.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 720.0
+offset_bottom = 1597.0
+mouse_filter = 2
+color = Color(0.639216, 0.803922, 0.678431, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="cientifico" parent="CanvasLayer2" instance=ExtResource("1_ltmkg")]
+position = Vector2(-5, -6)
+
+[node name="monte-button" parent="CanvasLayer2" instance=ExtResource("3_cjbqw")]
+position = Vector2(0, 1448)
+
+[node name="casa-button" parent="CanvasLayer2" instance=ExtResource("2_v2b3o")]
+position = Vector2(564, 1442)

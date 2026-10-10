@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1r00giuoowdd"]
+
+[ext_resource type="Texture2D" uid="uid://3o0nsxk2ffki" path="res://ui/casa.png" id="1_wtcfe"]
+
+[node name="casa-button" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = 825.0
+offset_right = 154.0
+offset_bottom = 977.0
+grow_vertical = 2
+icon = ExtResource("1_wtcfe")
