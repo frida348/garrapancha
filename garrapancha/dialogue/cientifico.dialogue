@@ -1,0 +1,108 @@
+~ start
+
+Dr. Moo: ¡Hola chamaco curioso! Soy el Dr. Moo, científico especializado en garrapatas y las enfermedades que transmiten.
+Dr. Moo: ¿Quieres que te cuente sobre las garrapatas y cómo cuidarse de ellas? O ¿Quieres jugar y ver cuánto sabes de garrapatas?
+
+- Jugar
+	Dr. Moo: ¡Vamos a jugar a ver cuánto sabes sobre las garrapatas!
+	
+	Dr. Moo: ¿De qué se alimentan las garrapatas?
+	- Plantas, hojas y otros insectos
+		Dr. Moo: La respuesta correcta era: Sangre de animales y humanos.
+	- Sangre de animales y humanos
+		Dr. Moo: ¡Muy bien!
+	- Agua y tierra
+		Dr. Moo: La respuesta correcta era: Sangre de animales y humanos.
+
+	Dr. Moo: ¿De qué manera las garrapatas transmiten enfermedades como la Rickettsiosis?
+	- Solo cuando bailan sobre tu piel
+		Dr. Moo: La respuesta correcta era: Por la saliva cuando se alimentan.
+	- Por la saliva cuando se alimentan
+		Dr. Moo: ¡Muy bien!
+	- Por el aire
+		Dr. Moo: La respuesta correcta era: Por la saliva cuando se alimentan.
+
+	Dr. Moo: ¿Qué enfermedad puede transmitir la garrapata?
+	- Dengue
+		Dr. Moo: La respuesta correcta era: Rickettsiosis.
+	- Rickettsiosis
+		Dr. Moo: ¡Muy bien!
+	- Influenza
+		Dr. Moo: La respuesta correcta era: Rickettsiosis.
+
+	Dr. Moo: ¿De qué animales se pueden alimentar las garrapatas?
+	- Perros, vacas y caballos
+		Dr. Moo: ¡Muy bien!
+	- El pez dorado de tu amigo
+		Dr. Moo: La respuesta correcta era: Perros, vacas y caballos.
+	- Aves marinas solamente
+		Dr. Moo: La respuesta correcta era: Perros, vacas y caballos.
+
+	Dr. Moo: ¿Qué debo hacer si encuentro una garrapata en mi cuerpo?
+	- Arrancarla con los dedos
+		Dr. Moo: La respuesta correcta era: Girarla lentamente hasta retirarla.
+	- Aplastarla para matarla
+		Dr. Moo: La respuesta correcta era: Girarla lentamente hasta retirarla.
+	- Girarla lentamente hasta retirarla
+		Dr. Moo: ¡Muy bien!
+
+	Dr. Moo: ¿Cómo puedo proteger a mis mascotas de las garrapatas?
+	- Bañándolos y revisando su pelaje
+		Dr. Moo: ¡Muy bien!
+	- Dándoles dulces
+		Dr. Moo: La respuesta correcta era: Bañándolos y revisando su pelaje.
+	- Dejándolos libres en el monte
+		Dr. Moo: La respuesta correcta era: Bañándolos y revisando su pelaje.
+
+	Dr. Moo: ¿Qué tipo de ropa ayuda a protegerte de las garrapatas?
+	- Ropa negra y corta
+		Dr. Moo: La respuesta correcta era: Ropa clara y de manga larga.
+	- Ropa clara y de manga larga
+		Dr. Moo: ¡Muy bien!
+	- No hay un tipo de ropa
+		Dr. Moo: La respuesta correcta era: Ropa clara y de manga larga.
+
+	Dr. Moo: ¿Qué síntomas puede causar la Rickettsiosis?
+	- Fiebre, dolor de cabeza y manchas en la piel
+		Dr. Moo: ¡Muy bien!
+	- Solo hambre y sed
+		Dr. Moo: La respuesta correcta era: Fiebre, dolor de cabeza y manchas en la piel.
+	- Mucha energía
+		Dr. Moo: La respuesta correcta era: Fiebre, dolor de cabeza y manchas en la piel.
+		
+	Dr. Moo: ¡Espero que te hayas divertido! Y sigue aprendiendo mucho.
+
+- Aprender
+	Dr. Moo: Hoy te voy a contar sobre unos animalitos pequeños pero muy importantes: las garrapatas. ¿Estás listo? ¡Comencemos!
+	
+	# Sobre qué son
+	Dr. Moo: Las garrapatas son pequeños artrópodos que se alimentan de sangre y se pegan a la piel de animales y humanos.
+	Dr. Moo: Ellas no vuelan ni saltan, simplemente se esperan en el pasto o en grietas hasta que alguien pasa cerca y se enganchan.
+	
+	# Enfermedades
+	Dr. Moo: Algunas pueden transmitir enfermedades a través de su saliva cuando se están alimentando.
+	Dr. Moo: Una de las más conocidas son las Rickettsiosis, pero también pueden transmitir otras como Ehrlichiosis y Anaplasmosis, comunes en los perritos.
+	
+	# Prevención Casa
+	Dr. Moo: Para reducir el riesgo, es importante mantener el patio limpio, cortar la hierba alta y evitar que se acumule basura en nuestro hogar y jardín.
+	
+	# Prevención Mascotas
+	Dr. Moo: Si tienes mascotas, revisa siempre su pelaje. A veces se esconden detrás de las orejas, entre las patas o cerca del cuello.
+	Dr. Moo: También puedes usar productos antiparasitarios, como pastillas o collares para evitar que se le suban a tu mascota.
+	
+	# Prevención Personas
+	Dr. Moo: Cuando visites lugares con hierba alta, el campo o el monte, usa ropa clara y de manga larga. Así puedes ver mejor si una garrapata se sube y también te protege.
+	Dr. Moo: Además, aplica repelente en la piel y en la ropa para un extra de protección.
+	
+	# Qué hacer si pica
+	Dr. Moo: Si encuentras una pegada a tu piel, no la arranques con los dedos ni la aplastes.
+	Dr. Moo: Usa pinzas finas y agárrala lo más cerca de la piel, justo en la cabeza. Después tira hacia arriba hasta retirarla por completo.
+	Dr. Moo: Es muy importante retirarla completa para identificar la especie y saber qué enfermedad puede transmitir. Si no puedes, acude a un doctor.
+	
+	# Síntomas
+	Dr. Moo: Si después de una picadura tienes fiebre, dolor de cabeza fuerte o manchas en la piel, es importante acudir al médico y decirle que te picó una garrapata.
+	
+	# Cierre
+	Dr. Moo: Con un poco de cuidado, podemos disfrutar de la naturaleza sin miedo. El conocimiento es nuestra mejor protección.
+
+=> END

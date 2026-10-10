@@ -1,0 +1,175 @@
+[gd_scene load_steps=12 format=3 uid="uid://monte_rompecabezas_v2"]
+
+[ext_resource type="Script" path="res://assets/monte/rompecabezas.gd" id="1_main"]
+[ext_resource type="Script" path="res://assets/monte/puzzle_board.gd" id="2_board"]
+[ext_resource type="Texture2D" uid="uid://dv438fak402r4" path="res://assets/monte/pasto.png" id="3_pasto"]
+[ext_resource type="Texture2D" uid="uid://b70eljxwgweum" path="res://ui/monte.png" id="4_monte"]
+[ext_resource type="FontFile" path="res://assets/dialog/Pangolin-Regular.ttf" id="5_font"]
+[ext_resource type="PackedScene" uid="uid://dcxqtahr87quc" path="res://assets/garrapancha.tscn" id="6_garrapancha"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_dark"]
+bg_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+border_color = Color(0.345098, 0.345098, 0.345098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+content_margin_left = 6
+content_margin_top = 3
+content_margin_right = 6
+content_margin_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_black"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0.345098, 0.345098, 0.345098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+content_margin_left = 6
+content_margin_top = 3
+content_margin_right = 6
+content_margin_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_win_panel"]
+bg_color = Color(0.95, 0.93, 0.85, 1)
+border_color = Color(0.345098, 0.345098, 0.345098, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_puzzle"]
+default_font = ExtResource("5_font")
+default_font_size = 54
+Button/styles/normal = SubResource("StyleBox_dark")
+Button/styles/hover = SubResource("StyleBox_dark")
+Button/styles/pressed = SubResource("StyleBox_dark")
+Button/styles/focus = SubResource("StyleBox_dark")
+Button/styles/disabled = SubResource("StyleBox_dark")
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+
+[sub_resource type="Theme" id="Theme_timer_puzzle"]
+default_font = ExtResource("5_font")
+default_font_size = 90
+Label/styles/normal = SubResource("StyleBox_black")
+Label/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+
+[sub_resource type="Theme" id="Theme_puz_light"]
+default_font = ExtResource("5_font")
+default_font_size = 52
+Label/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+
+[sub_resource type="Theme" id="Theme_puz_dark"]
+default_font = ExtResource("5_font")
+default_font_size = 52
+Label/colors/font_color = Color(0.08, 0.08, 0.08, 1)
+
+[node name="Rompecabezas" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="BgLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="Sky" type="ColorRect" parent="BgLayer"]
+offset_right = 718.0
+offset_bottom = 1589.0
+color = Color(0.717647, 0.819608, 0.898039, 1)
+
+[node name="Pasto" type="Sprite2D" parent="BgLayer"]
+position = Vector2(354, 1027)
+scale = Vector2(1.82649, 1.82649)
+texture = ExtResource("3_pasto")
+
+[node name="CharLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="garrapancha" parent="CharLayer" instance=ExtResource("6_garrapancha")]
+position = Vector2(580, 1510)
+scale = Vector2(2.5, 2.5)
+
+[node name="PuzzleRoot" type="Node2D" parent="."]
+
+[node name="BoardOutline" type="Node2D" parent="PuzzleRoot"]
+script = ExtResource("2_board")
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="BackButton" type="Button" parent="UILayer"]
+offset_left = 284.0
+offset_top = 1462.0
+offset_right = 434.0
+offset_bottom = 1580.0
+icon = ExtResource("4_monte")
+flat = true
+
+[node name="TimerLabel" type="Label" parent="UILayer"]
+offset_left = 130.0
+offset_top = 10.0
+offset_right = 588.0
+offset_bottom = 120.0
+theme = SubResource("Theme_timer_puzzle")
+text = "00:00.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoImageLabel" type="Label" parent="UILayer"]
+visible = false
+offset_left = 30.0
+offset_top = 620.0
+offset_right = 688.0
+offset_bottom = 780.0
+theme = SubResource("Theme_puz_light")
+autowrap_mode = 3
+text = "Añade la imagen del rompecabezas en:\nres://assets/monte/puzzle_image.png"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinPanel" type="Panel" parent="UILayer"]
+visible = false
+offset_left = 59.0
+offset_top = 460.0
+offset_right = 659.0
+offset_bottom = 880.0
+theme_override_styles/panel = SubResource("StyleBox_win_panel")
+
+[node name="CongratLabel" type="Label" parent="UILayer/WinPanel"]
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 590.0
+offset_bottom = 170.0
+theme = SubResource("Theme_puz_dark")
+theme_override_font_sizes/font_size = 30
+text = "¡Felicidades!
+¡Completaste el rompecabezas!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TimeLabel" type="Label" parent="UILayer/WinPanel"]
+offset_left = 10.0
+offset_top = 185.0
+offset_right = 590.0
+offset_bottom = 235.0
+theme = SubResource("Theme_puz_dark")
+theme_override_font_sizes/font_size = 28
+text = "Tiempo: 00:00.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="UILayer/WinPanel"]
+offset_left = 150.0
+offset_top = 260.0
+offset_right = 450.0
+offset_bottom = 378.0
+theme = SubResource("Theme_puzzle")
+icon = ExtResource("4_monte")
+flat = true
+
+[connection signal="pressed" from="UILayer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="UILayer/WinPanel/MenuButton" to="." method="_on_back_button_pressed"]

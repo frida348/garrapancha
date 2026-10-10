@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://n5iiasju74ur"]
+
+[ext_resource type="Texture2D" uid="uid://cylreqfv0fu7i" path="res://assets/casa/casa-0000.png" id="1_qgjjr"]
+[ext_resource type="PackedScene" uid="uid://bikg0e8nnj214" path="res://assets/casa/hamaca.tscn" id="2_m4wry"]
+[ext_resource type="PackedScene" uid="uid://cylxi22kddvnr" path="res://ui/lab_button.tscn" id="3_xnwli"]
+[ext_resource type="PackedScene" uid="uid://bs3wmy1iffq1g" path="res://ui/monte_button.tscn" id="4_yiwyu"]
+[ext_resource type="PackedScene" uid="uid://c2aai0jrr72i6" path="res://malix.tscn" id="5_yiwyu"]
+[ext_resource type="Texture2D" uid="uid://u76ry4rk4lpt" path="res://assets/casa/Miis.png" id="6_8pu4j"]
+
+[node name="casa" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Casa-0000" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(360, 815)
+scale = Vector2(1.93257, 1.93257)
+texture = ExtResource("1_qgjjr")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="hamaca" parent="CanvasLayer2" instance=ExtResource("2_m4wry")]
+position = Vector2(-11, 91)
+
+[node name="lab_button" parent="CanvasLayer2" instance=ExtResource("3_xnwli")]
+position = Vector2(0, 1448)
+
+[node name="monte-button" parent="CanvasLayer2" instance=ExtResource("4_yiwyu")]
+position = Vector2(570, 1448)
+
+[node name="Malix" parent="CanvasLayer2/monte-button" instance=ExtResource("5_yiwyu")]
+position = Vector2(-326, 3)
+scale = Vector2(1.88028, 1.86956)
+
+[node name="Miis" type="Sprite2D" parent="CanvasLayer2/monte-button"]
+position = Vector2(-68, 82)
+scale = Vector2(1.79807, 1.79807)
+texture = ExtResource("6_8pu4j")

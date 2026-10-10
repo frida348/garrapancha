@@ -1,0 +1,292 @@
+[gd_scene format=3 uid="uid://c6gxdpxm5pqik"]
+
+[ext_resource type="Script" uid="uid://bjknystk5pvog" path="res://assets/monte/memorama.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dv438fak402r4" path="res://assets/monte/pasto.png" id="2_pasto"]
+[ext_resource type="Texture2D" uid="uid://b70eljxwgweum" path="res://ui/monte.png" id="3_monte"]
+[ext_resource type="FontFile" uid="uid://iarq8m3g0osy" path="res://assets/dialog/Pangolin-Regular.ttf" id="4_font"]
+[ext_resource type="PackedScene" uid="uid://dcxqtahr87quc" path="res://assets/garrapancha.tscn" id="5_garrapancha"]
+
+[sub_resource type="Theme" id="Theme_mem_title"]
+default_font = ExtResource("4_font")
+default_font_size = 56
+Label/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_dark"]
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 6.0
+content_margin_bottom = 3.0
+bg_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+border_color = Color(0.345098, 0.345098, 0.345098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_memorama"]
+default_font = ExtResource("4_font")
+default_font_size = 54
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/styles/disabled = SubResource("StyleBox_dark")
+Button/styles/focus = SubResource("StyleBox_dark")
+Button/styles/hover = SubResource("StyleBox_dark")
+Button/styles/normal = SubResource("StyleBox_dark")
+Button/styles/pressed = SubResource("StyleBox_dark")
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_black"]
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 6.0
+content_margin_bottom = 3.0
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0.345098, 0.345098, 0.345098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_timer"]
+default_font = ExtResource("4_font")
+default_font_size = 72
+Label/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Label/styles/normal = SubResource("StyleBox_black")
+
+[sub_resource type="Theme" id="Theme_level_name"]
+default_font = ExtResource("4_font")
+default_font_size = 80
+Label/colors/font_color = Color(0.05, 0.05, 0.05, 1)
+
+[sub_resource type="Theme" id="Theme_mem_label"]
+default_font = ExtResource("4_font")
+default_font_size = 40
+Label/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+
+[node name="Memorama" type="Node2D" unique_id=1745692053]
+script = ExtResource("1_script")
+
+[node name="BgLayer" type="CanvasLayer" parent="." unique_id=1024648577]
+layer = -10
+
+[node name="Sky" type="ColorRect" parent="BgLayer" unique_id=782114369]
+offset_right = 718.0
+offset_bottom = 1589.0
+color = Color(0.717647, 0.819608, 0.898039, 1)
+
+[node name="Pasto" type="Sprite2D" parent="BgLayer" unique_id=1770685834]
+position = Vector2(354, 1027)
+scale = Vector2(1.82649, 1.82649)
+texture = ExtResource("2_pasto")
+
+[node name="CharLayer" type="CanvasLayer" parent="." unique_id=1086949093]
+layer = -5
+
+[node name="garrapancha" parent="CharLayer" unique_id=1184570605 instance=ExtResource("5_garrapancha")]
+position = Vector2(140, 1510)
+scale = Vector2(3, 3)
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1818116234]
+layer = 10
+
+[node name="LevelPanel" type="Control" parent="UILayer" unique_id=476249262]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 718.0
+offset_bottom = 1589.0
+
+[node name="TitleLabel" type="Label" parent="UILayer/LevelPanel" unique_id=1172670036]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 60.0
+offset_right = 609.0
+offset_bottom = 200.0
+theme = SubResource("Theme_mem_title")
+text = "Memorama"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nivel1Btn" type="Button" parent="UILayer/LevelPanel" unique_id=501083711]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 430.0
+offset_right = 609.0
+offset_bottom = 680.0
+theme = SubResource("Theme_memorama")
+text = "Tipos de
+Garrapatas"
+
+[node name="Nivel2Btn" type="Button" parent="UILayer/LevelPanel" unique_id=1629011716]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 750.0
+offset_right = 609.0
+offset_bottom = 1000.0
+theme = SubResource("Theme_memorama")
+text = "Cómo quitar
+una garrapata"
+
+[node name="BackBtn" type="Button" parent="UILayer/LevelPanel" unique_id=2061217365]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 1462.0
+offset_right = 434.0
+offset_bottom = 1580.0
+icon = ExtResource("3_monte")
+flat = true
+
+[node name="GameUI" type="Control" parent="UILayer" unique_id=1184842164]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 718.0
+offset_bottom = 420.0
+
+[node name="TimerLabel" type="Label" parent="UILayer/GameUI" unique_id=1408391243]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 5.0
+offset_right = 588.0
+offset_bottom = 128.0
+theme = SubResource("Theme_timer")
+text = "00:00.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="UILayer/GameUI" unique_id=731633379]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 133.0
+offset_right = 708.0
+offset_bottom = 415.0
+theme = SubResource("Theme_level_name")
+text = "Nivel 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CardsRoot" type="Control" parent="UILayer" unique_id=1700114702]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 718.0
+offset_bottom = 1589.0
+mouse_filter = 2
+
+[node name="WinPanel" type="Control" parent="UILayer" unique_id=1091791854]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 718.0
+offset_bottom = 1589.0
+
+[node name="BgRect" type="ColorRect" parent="UILayer/WinPanel" unique_id=407976974]
+layout_mode = 0
+offset_right = 718.0
+offset_bottom = 1589.0
+color = Color(0, 0, 0, 0.65)
+
+[node name="WinLabel" type="Label" parent="UILayer/WinPanel" unique_id=796769205]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 530.0
+offset_right = 609.0
+offset_bottom = 700.0
+theme = SubResource("Theme_mem_title")
+text = "¡Felicidades!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="UILayer/WinPanel" unique_id=173875814]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 720.0
+offset_right = 609.0
+offset_bottom = 800.0
+theme = SubResource("Theme_mem_label")
+text = "Tiempo: 00:00.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextLevelButton" type="Button" parent="UILayer/WinPanel" unique_id=1544402172]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 860.0
+offset_right = 559.0
+offset_bottom = 1030.0
+theme = SubResource("Theme_memorama")
+text = "Siguiente Nivel"
+
+[node name="MenuButton" type="Button" parent="UILayer/WinPanel" unique_id=512163575]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 1090.0
+offset_right = 434.0
+offset_bottom = 1208.0
+icon = ExtResource("3_monte")
+flat = true
+
+[node name="GameBackBtn" type="Button" parent="UILayer" unique_id=904691662]
+visible = false
+offset_left = 284.0
+offset_top = 1462.0
+offset_right = 434.0
+offset_bottom = 1580.0
+icon = ExtResource("3_monte")
+flat = true
+
+[node name="ConfirmPanel" type="Control" parent="UILayer" unique_id=2061705390]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 718.0
+offset_bottom = 1589.0
+
+[node name="DimBg" type="ColorRect" parent="UILayer/ConfirmPanel" unique_id=1338157032]
+layout_mode = 0
+offset_right = 718.0
+offset_bottom = 1589.0
+color = Color(0, 0, 0, 0.76)
+
+[node name="BoxBg" type="ColorRect" parent="UILayer/ConfirmPanel" unique_id=975796632]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 595.0
+offset_right = 659.0
+offset_bottom = 1010.0
+color = Color(0.08, 0.08, 0.08, 0.97)
+
+[node name="QuestionLabel" type="Label" parent="UILayer/ConfirmPanel" unique_id=459720485]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 620.0
+offset_right = 639.0
+offset_bottom = 800.0
+theme = SubResource("Theme_mem_label")
+text = "¿Seguro quieres volver?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ConfirmarBtn" type="Button" parent="UILayer/ConfirmPanel" unique_id=1325117543]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 820.0
+offset_right = 559.0
+offset_bottom = 910.0
+theme = SubResource("Theme_memorama")
+text = "Confirmar"
+
+[node name="RechazarBtn" type="Button" parent="UILayer/ConfirmPanel" unique_id=1094876770]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 925.0
+offset_right = 559.0
+offset_bottom = 1015.0
+theme = SubResource("Theme_memorama")
+text = "Rechazar"
+
+[connection signal="pressed" from="UILayer/LevelPanel/BackBtn" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="UILayer/WinPanel/NextLevelButton" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="UILayer/WinPanel/MenuButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="UILayer/GameBackBtn" to="." method="_on_game_back_pressed"]
+[connection signal="pressed" from="UILayer/ConfirmPanel/ConfirmarBtn" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="UILayer/ConfirmPanel/RechazarBtn" to="." method="_on_reject_pressed"]

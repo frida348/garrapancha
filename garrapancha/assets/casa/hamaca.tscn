@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bikg0e8nnj214"]
+
+[ext_resource type="Script" uid="uid://ctpiudog8l6yx" path="res://assets/casa/hamaca.gd" id="1_6guf6"]
+[ext_resource type="Texture2D" uid="uid://vgan8altpca6" path="res://assets/casa/hamaca0000.png" id="2_cc872"]
+
+[node name="hamaca" type="Node2D"]
+script = ExtResource("1_6guf6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(366, 796)
+scale = Vector2(1.90182, 1.90182)
+texture = ExtResource("2_cc872")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(364, 792)
+scale = Vector2(1.90182, 1.90182)
+polygon = PackedVector2Array(196.5, 204, 196.5, 99, 193.5, 99, 193.5, 101.2, 160.5, 134.2, 160.5, 135, 99.5, 187.1, 99.5, 187.9, 58.5, 215.9, 58.5, 216.6, 20.5, 231.6, -2.3, 228, -12.4, 228, -41.2, 220, -45.9, 220, -90.1, 202, -93, 202, -128.9, 177, -130.8, 177, -153.8, 157, -156.6, 157, -194.6, 116, -196.5, 116, -196.5, 233.5, -148.5, 270.9, -148.5, 272.2, -112.5, 291.2, -112.5, 292.5, -57.5, 308.4, -57.5, 309.8, -9.60001, 314, 0.699997, 314, 33.9, 307, 41.9, 307, 67.8, 296, 73, 296, 129, 263, 132.2, 263, 178.3, 226, 179.5, 226)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

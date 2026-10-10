@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dojja8ubrr51f"
+path="res://.godot/imported/hamaca.dialogue-9abd84e3a462d42dce054ebb109d89e6.tres"
+
+[deps]
+
+source_file="res://dialogue/hamaca.dialogue"
+dest_files=["res://.godot/imported/hamaca.dialogue-9abd84e3a462d42dce054ebb109d89e6.tres"]
+
+[params]
+
+defaults=true

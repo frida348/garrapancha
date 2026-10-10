@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://jugar_monte_btn"]
+
+[ext_resource type="Script" path="res://ui/jugar_monte_button.gd" id="1_jugar"]
+
+[node name="jugar_monte_button" type="Node2D"]
+script = ExtResource("1_jugar")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 120.0
+offset_bottom = 50.0
+flat = true
+text = "Jugar"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

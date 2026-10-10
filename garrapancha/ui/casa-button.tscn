@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://rk4v0d5m370u"]
+
+[ext_resource type="Texture2D" uid="uid://3o0nsxk2ffki" path="res://ui/casa.png" id="1_kypj1"]
+[ext_resource type="Script" uid="uid://b5d5cwv0mng0n" path="res://ui/casa_button.gd" id="1_xnwto"]
+
+[node name="casa-button" type="Node2D"]
+position = Vector2(571, 787)
+script = ExtResource("1_xnwto")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 157.0
+offset_bottom = 158.0
+grow_vertical = 2
+icon = ExtResource("1_kypj1")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
